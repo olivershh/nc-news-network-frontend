@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getAllArticles } from "../components/api-calls"
 import ArticleCardSmall from "../components/ArticleCardSmall"
+import Loading from "../components/Loading"
 
 export default function ArticlesList() {
 
@@ -18,10 +19,12 @@ export default function ArticlesList() {
     }, [])
 
     return (
-        <main className="articles-list-main">
+        <Loading isLoading={isLoading} largeIcon={true}>
+            <main className="articles-list-main">
         {articles.map(article => {
-            return <ArticleCardSmall article={article}/>
+            return <ArticleCardSmall key={article.article_id} article={article}/>
         })}
         </main>
+        </Loading>
     )
 }
