@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getAllArticles } from "../components/api-calls"
 import ArticleCardSmall from "../components/ArticleCardSmall"
 import Loading from "../components/Loading"
+import {TransitionGroup, CSSTransition} from 'react-transition-group'
 
 export default function ArticlesList() {
 
