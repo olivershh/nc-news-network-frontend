@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getAllArticles } from "../components/api-calls"
 import ArticleCardSmall from "../components/ArticleCardSmall"
 
-export default function All() {
+export default function ArticlesList() {
 
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -20,7 +20,6 @@ export default function All() {
     return (
         <main className="articles-list-main">
         {articles.map(article => {
-            console.log(article)
             return <ArticleCardSmall article={article}/>
         })}
         </main>

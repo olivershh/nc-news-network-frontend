@@ -1,10 +1,12 @@
+import Link from 'react-router-dom'
+
 export default function Navbar() {
     return (
         <nav className="nav-site-wide">
-            <a href="#">All</a>
-             <a href="#">Random</a>
-             <a href="#">Trending</a>
-             <a href="#">Post</a>
+            <Link href="/all">All</a>
+             <Link href="/all">Random</a>
+             <Link href="/all">Trending</a>
+             <Link href="/all">Post</a>
         </nav>
     )
 }

@@ -1,5 +1,4 @@
 export default function ArticleCardSmall({article}) {
-    console.log(article)
     return (
     <div className="article-card-small">
         
