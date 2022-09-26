@@ -1,0 +1,5 @@
+File is viewable on https://excalidraw.com/
+
+Use the open icon in the top left corner
+
+Includes component tree, wireframe, and basic functionality goals.
