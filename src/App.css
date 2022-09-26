@@ -3,6 +3,9 @@
   --white: #ffffff;
 }
 
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
 .App {
   text-align: center;
 }
