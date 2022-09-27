@@ -11,7 +11,6 @@ const [article, setArticle] = useState({})
 
 
 useEffect(() => {
-    console.log("in article card big useeffect")
     getArticle(article_id).then(({article}) => {
         setArticle(article)
         setIsLoading(false)
@@ -31,14 +30,6 @@ useEffect(() => {
             <p>💬 {article.comment_count}</p>
         </div>
         <p className="article-card-big-body">{article.body}</p>
-
-        {/* <h2>{article.title} <span className="author-tag-inline">by {article.author}</span></h2>
-        <div className="article-card-small-stats">
-            <p>♡ {article.votes}</p>
-            <p>💬 {article.comment_count}</p>
-        </div> */}
-
-
         
     </div>
     </Loading>
