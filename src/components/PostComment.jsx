@@ -26,19 +26,6 @@ export default function PostComment({article_id, setComments}) {
     return (
 
 
-        <div className="new-comment">
-            <div className="comment-form">
-                <form onSubmit={handleSubmit}> 
-                    <textarea name="userComment"
-                            value={userComment}
-                            onChange={e => handleChange(e)}>
-                        Say something...
-                    </textarea>
-                    <button type="submit">Post!</button>
-                </form>
-            </div>
-
-        </div>
 
 
     // <div className="new-comment">
