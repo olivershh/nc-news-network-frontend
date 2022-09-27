@@ -22,12 +22,10 @@ export default function ArticlesList() {
 
         
         const searchParams = {params: {topic}}
-        // const apiCalls = [getAllArticles(searchParams)]
 
 
         getAllArticles(searchParams).then(({articles}) => {
             setArticles(articles)
-            // setTopics(topics)
             setIsLoading(false)
         })
         .catch(err => {

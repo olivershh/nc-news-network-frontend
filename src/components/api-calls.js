@@ -17,3 +17,9 @@ export function getTopics() {
     return data;
   });
 }
+
+export function getArticle(article_id) {
+  return api.get(`/articles/${article_id}`).then(({ data }) => {
+    return data;
+  });
+}
