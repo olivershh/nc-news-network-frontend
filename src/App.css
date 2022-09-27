@@ -17,6 +17,21 @@
   color: var(--custom-white);
 }
 
+.homepage-big-link {
+  border: 2px solid var(--custom-very-dark);
+  box-shadow: 4px 4px var(--custom-bold-main);
+  background-color: var(--custom-white);
+  margin: 10px auto;
+  width: 60%;
+  padding: 10px 0;
+  font-size: 2rem;
+}
+
+.home-menu {
+  display: flex;
+  flex-direction: column;
+}
+
 
 h1 {
   font-weight: 800;
