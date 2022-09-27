@@ -6,8 +6,36 @@
   --custom-very-dark:  rgb(57, 51, 51);
 }
 
+.article-card-big-button, .article-card-big-button-voted  {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  padding:  0 20px;
+}
 
+.article-card-big-button-voted {
+  background-color: var(--custom-bold-secondary);
+  color: var(--custom-white);
+}
 
+.homepage-big-link {
+  border: 2px solid var(--custom-very-dark);
+  box-shadow: 4px 4px var(--custom-bold-main);
+  background-color: var(--custom-white);
+  margin: 10px auto;
+  width: 60%;
+  padding: 10px 0;
+  font-size: 2rem;
+}
+
+.home-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-home-link {
+  color: white;
+  font-size: 2rem;;
+}
 
 
 h1 {
@@ -43,12 +71,6 @@ body {
 
   
 }
-
-a:visited {
-  color:var(--custom-very-dark)
-}
-
-
 
 
 
