@@ -17,7 +17,6 @@ h1 {
   padding: 0;
   color: var(--custom-white);
   font-family: 'Monofett', cursive;
-
 }
 
 
@@ -45,16 +44,58 @@ body {
   
 }
 
-a {
+NAV > a:link, a:visited, a:active {
   font-size: 1.5rem;
   padding: 2rem;
-}
-
-a:link, a:visited, a:active{
   color: var(--custom-white);
   text-decoration: none;
+}
+
+
+
+main {
+  padding-top: 1rem;
+}
+
+
+
+.topic-bar {
+  background-color: var(--custom-white);
+  border-bottom: solid 8px var(--custom-very-dark);
+  padding: 1rem;
+}
+
+.topic-bar > a {
+  padding: 1rem 2rem;
+  font-size: large;
+  color:inherit;
+}
+
+.topic-bar-selected {
+  background-color: #59CE8F;
+}
+
+.topic-bar-selected-all {
+  background-color: var(--custom-bold-main);
+}
+
+
+
+.error-msg-small {
+  border: 2px solid var(--custom-very-dark);
+  margin: 0 auto;
+  margin-top: 4rem;
+  max-width: 600px;
+  background-color: var(--custom-white);
+  padding: 4rem;
+  box-shadow: 4px 4px var(--custom-bold-main);
+  
+}
+.error-msg-small > a {
+color: var(--custom-very-dark);
 
 }
+
 
 .title-bar-site-wide {
   width: 90%;
@@ -67,7 +108,7 @@ a:link, a:visited, a:active{
 .header-site-wide {
   background-color: rgb(57, 51, 51);
   color: black;
-  border-bottom: 8px solid var(--custom-bold-secondary);
+  /* border-bottom: 8px solid var(--custom-bold-main); */
   display: inline-flex;
   width: 100%;
   justify-content: space-evenly;
