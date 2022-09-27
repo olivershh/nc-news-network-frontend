@@ -12,7 +12,7 @@ export default function PostComment({article_id, setComments}) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (userComment === "")
+        if (userComment === "") return
         setComments(prevComments => {
             return [{author: "grumpy19", body: userComment, votes: 0}, ...prevComments]
         })
