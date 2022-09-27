@@ -19,7 +19,6 @@ export default function PostComment({article_id, setComments}) {
         setUserComment("")
         postCommentByID(article_id, userComment)
 
-        
 
     }
 
