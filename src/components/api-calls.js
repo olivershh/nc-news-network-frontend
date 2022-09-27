@@ -33,3 +33,9 @@ export function increaseVotes(article_id) {
     })
     .then(({ data }) => {});
 }
+
+export function getCommentsByArticleID(article_id) {
+  return api.get(`/articles/${article_id}/comments`).then(({ data }) => {
+    return data;
+  });
+}

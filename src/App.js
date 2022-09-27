@@ -3,7 +3,8 @@ import Header from "./site-wide/Header";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./site-wide/Footer";
 import ArticlesList from "./pages/ArticlesList";
-import ArticleCardBig from "./components/ArticleCardBig";
+import Article from "./pages/Article";
+// import ArticleCardBig from "./components/ArticleCardBig";
 import Home from "./pages/Home";
 
 function App() {
@@ -14,10 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<ArticlesList />} />
         <Route path="/articles/:topic" element={<ArticlesList />} />
-        <Route
-          path="/articles/article/:article_id"
-          element={<ArticleCardBig />}
-        />
+        <Route path="/articles/article/:article_id" element={<Article />} />
       </Routes>
 
       <Footer />
