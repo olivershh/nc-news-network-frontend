@@ -8,7 +8,6 @@ const api = axios.create({
 
 export function getAllArticles(params) {
   return api.get("/articles", params).then(({ data }) => {
-    console.log(data, "in articles api call");
     return data;
   });
 }
@@ -27,13 +26,10 @@ export function getArticle(article_id) {
 
 export function increaseVotes(article_id) {
   const voteUpdate = { inc_votes: 1 };
-  console.log(article_id);
 
   return api
     .patch(`/articles/${article_id}`, voteUpdate, {
       headers: { "Content-type": "application/json; charset=UTF-8" },
     })
-    .then(({ data }) => {
-      console.log(data);
-    });
+    .then(({ data }) => {});
 }
