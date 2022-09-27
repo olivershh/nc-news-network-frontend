@@ -56,7 +56,8 @@
   box-shadow: 4px 4px var(--custom-bold-secondary);
   background-color: var(--custom-white);
   display: flex;
-  width: 100%
+  width: 100%;
+  justify-content: space-between;
 }
 
 .big-quotes {
@@ -69,6 +70,7 @@
 .comment-body {
   display:flex;
   flex-direction: row;
+  align-items: center;
 }
 
 

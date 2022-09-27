@@ -3,9 +3,9 @@ import { getCommentsByArticleID } from "./api-calls"
 import CommentCard from "./CommentCard"
 import Loading from "./Loading"
 
-export default function CommentsList({article_id}) {
+export default function CommentsList({article_id, setComments, comments}) {
 
-const [comments, setComments] = useState([])
+
 const [isLoading, setIsLoading] = useState(true)
 
 

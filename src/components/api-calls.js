@@ -39,3 +39,10 @@ export function getCommentsByArticleID(article_id) {
     return data;
   });
 }
+
+export function postCommentByID(article_id, comment) {
+  const postObject = { usernme: "grumpy19", body: comment };
+  return api.post(`/articles/${article_id}/comments`, postObject, {
+    headers: { "Content-type": "application/json; charset=UTF-8" },
+  });
+}
