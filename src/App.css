@@ -44,12 +44,11 @@ body {
   
 }
 
-NAV > a:link, a:visited, a:active {
-  font-size: 1.5rem;
-  padding: 2rem;
-  color: var(--custom-white);
-  text-decoration: none;
+a:visited {
+  color:var(--custom-very-dark)
 }
+
+
 
 
 
@@ -133,6 +132,25 @@ color: var(--custom-very-dark);
   padding: 3px 10px;
   box-shadow: 4px 4px var(--custom-bold-main);
   justify-content: space-between;
+}
+
+.article-card-big {
+  display:flex;
+  border: 2px solid black;
+  margin: 20px 10px;
+  padding: 3px 10px;
+  box-shadow: 4px 4px var(--custom-bold-main);
+  justify-content: space-between;
+  flex-direction: column;
+  width: 90%;
+  margin: 3rem auto;
+  background-color: var(--custom-white);
+}
+
+.article-card-big-stats {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
 }
 
 .articles-list-main {
