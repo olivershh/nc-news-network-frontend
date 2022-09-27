@@ -18,7 +18,6 @@ export default function ArticlesList() {
 
     useEffect(() => {
 
-        console.log("in useeffect all")
         setIsError(false)
 
         
@@ -34,13 +33,12 @@ export default function ArticlesList() {
         .catch(err => {
             const responseMessage = err.response?.data?.msg
 
-            console.log(err)
 
             if (responseMessage === "topic not found") {
             setErrorOptions(
                 {msg: `Sorry, we don't have any articles about ${topic}`,
-                linkText: "Head back to /ALL",
-                linkRoute: "/all"}
+                linkText: "Head back to all articles",
+                linkRoute: "/articles"}
             )
 
             setIsError(true)

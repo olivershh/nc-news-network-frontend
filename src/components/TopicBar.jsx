@@ -17,10 +17,10 @@ useEffect(() => {
 <div className="topic-bar">
     {topics.map(topic => {
         const isSelectedTopic = (selectedTopic === topic.slug)
-        return <Link key={topic.slug} to={`/all/${topic.slug}`} className={isSelectedTopic ? "topic-bar-selected" : undefined} >
+        return <Link key={topic.slug} to={`/articles/${topic.slug}`} className={isSelectedTopic ? "topic-bar-selected" : undefined} >
         {topic.slug}</Link>
     })}
-    <Link key="all" to="/all" className={selectedTopic ?? "topic-bar-selected-all"}>ALL</Link>
+    <Link key="all" to="/articles" className={selectedTopic ?? "topic-bar-selected-all"}>ALL</Link>
 
 </div>
     )
