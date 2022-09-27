@@ -32,6 +32,11 @@
   flex-direction: column;
 }
 
+.navbar-home-link {
+  color: white;
+  font-size: 2rem;;
+}
+
 
 h1 {
   font-weight: 800;
@@ -66,12 +71,6 @@ body {
 
   
 }
-
-a:visited {
-  color:var(--custom-very-dark)
-}
-
-
 
 
 
