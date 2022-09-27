@@ -1,8 +1,9 @@
 import axios from "axios";
+import { isCompositeComponent } from "react-dom/test-utils";
 
 const api = axios.create({
   baseURL: "https://nc-news-api-oliver.herokuapp.com/api",
-  timeout: 7000,
+  // timeout: 15000,
 });
 
 export function getAllArticles(params) {
@@ -22,4 +23,17 @@ export function getArticle(article_id) {
   return api.get(`/articles/${article_id}`).then(({ data }) => {
     return data;
   });
+}
+
+export function increaseVotes(article_id) {
+  const voteUpdate = { inc_votes: 1 };
+  console.log(article_id);
+
+  return api
+    .patch(`/articles/${article_id}`, voteUpdate, {
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+    .then(({ data }) => {
+      console.log(data);
+    });
 }
