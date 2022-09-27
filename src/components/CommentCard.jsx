@@ -8,7 +8,10 @@ export default function CommentCard({comment}) {
             </ div>
             <div className="comment-opaque-bg" >
             <div className="comment-body">
+                <p className="big-quotes">“</p>
                 <p>{comment.body}</p>
+                <p className="big-quotes">”</p>
+
             </div>
             <div className="comment-votes">
             <h2>♡ {comment.votes}</h2>

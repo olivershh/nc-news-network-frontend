@@ -59,6 +59,18 @@
   width: 100%
 }
 
+.big-quotes {
+  font-size: 5rem;
+  padding:0 1rem;
+  margin: 0;
+  color: #d26759;
+}
+
+.comment-body {
+  display:flex;
+  flex-direction: row;
+}
+
 
 h1 {
   font-weight: 800;
