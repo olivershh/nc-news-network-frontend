@@ -6,16 +6,7 @@
   --custom-very-dark:  rgb(57, 51, 51);
 }
 
-.article-card-big-button, .article-card-big-button-voted  {
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  padding:  0 20px;
-}
 
-.article-card-big-button-voted {
-  background-color: var(--custom-bold-secondary);
-  color: var(--custom-white);
-}
 
 .homepage-big-link {
   border: 2px solid var(--custom-very-dark);
@@ -169,7 +160,6 @@ color: var(--custom-very-dark);
 .header-site-wide {
   background-color: rgb(57, 51, 51);
   color: black;
-  /* border-bottom: 8px solid var(--custom-bold-main); */
   display: inline-flex;
   width: 100%;
   justify-content: space-evenly;
@@ -218,6 +208,17 @@ color: var(--custom-very-dark);
 .articles-list-main {
   width: 90%;
   margin: 0 auto;
+}
+
+.article-card-big-button, .article-card-big-button-voted  {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  padding:  0 20px;
+}
+
+.article-card-big-button-voted {
+  background-color: var(--custom-bold-secondary);
+  color: var(--custom-white);
 }
 
 @media  (max-width: 600px) {

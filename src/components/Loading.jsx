@@ -1,7 +1,5 @@
-export default function Loading({isLoading, children, largeIcon=false}) {
+export default function Loading({ isLoading, children, largeIcon = false }) {
+  const loadIcon = largeIcon ? "LOADING..." : "loading...";
 
-
-    const loadIcon =largeIcon ? "LOADING..." : "loading..."
-
-    return isLoading ? <p>Loading...</p> : children
+  return isLoading ? <p>Loading...</p> : children;
 }
