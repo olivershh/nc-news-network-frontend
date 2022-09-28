@@ -8,9 +8,3 @@ export default function ErrorBoxSmall({ errorOptions }) {
     </div>
   );
 }
-
-// ErrorBoxSmall.defaultProps = {
-//     msg: "Sorry something went wrong",
-//     linkText: "Head back home",
-//     linkRoute: "/"
-// }
