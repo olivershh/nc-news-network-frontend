@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { getCommentsByArticleID } from "./api-calls"
 import CommentCard from "./CommentCard"
 import Loading from "./Loading"
+import { UserInfoContext } from "../contexts/UserInfoContext"
+
 
 export default function CommentsList({article_id, setComments, comments}) {
 
 
 const [isLoading, setIsLoading] = useState(true)
+const {userInfo, setUserInfo} = useContext(UserInfoContext)
 
 
 useEffect(() => {
@@ -20,7 +23,7 @@ useEffect(() => {
 
     return <Loading isLoading={isLoading}>
         {comments.map(comment => {
-            const isUserComment=(comment.author === "grumpy19")
+            const isUserComment=(comment.author === userInfo.username)
             return <CommentCard key={comment.comment_id} comment={comment} setComments={setComments} isUserComment={isUserComment}/>
         })}
     </Loading>
