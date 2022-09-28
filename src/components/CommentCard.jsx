@@ -1,6 +1,5 @@
 export default function CommentCard({comment}) {
-    console.log(comment, "in ccard")
-    return (
+    return(
         <div className="comment-card">
             <div className="user">
                 <img className="small-user-img" src="https://visualpharm.com/assets/30/User-595b40b85ba036ed117da56f.svg" />

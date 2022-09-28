@@ -3,7 +3,6 @@ import { postCommentByID } from "./api-calls"
 
 export default function PostComment({article_id, setComments}) {
 
-    console.log(article_id)
     const [userComment, setUserComment] = useState("")
 
     const handleChange = (event) =>  {
@@ -14,7 +13,7 @@ export default function PostComment({article_id, setComments}) {
         event.preventDefault()
         if (userComment === "") return
         setComments(prevComments => {
-            return [{author: "grumpy19", body: userComment, votes: 0}, ...prevComments]
+            return [{author: "grumpy19", body: userComment, votes: 0, comment_id: Date.now()}, ...prevComments]
         })
         setUserComment("")
         postCommentByID(article_id, userComment)

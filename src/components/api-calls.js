@@ -47,7 +47,6 @@ export function postCommentByID(article_id, comment) {
       headers: { "Content-type": "application/json; charset=UTF-8" },
     })
     .then(({ data }) => {
-      console.log(data, "in api call");
       return data;
     });
 }
