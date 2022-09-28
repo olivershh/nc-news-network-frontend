@@ -218,7 +218,7 @@ color: var(--custom-very-dark);
 
 .title-bar-site-wide {
   width: 90%;
-  margin: 0 auto;
+  margin: 1rem auto;
   display: flex;
   align-items: center;
   padding: 0 5%
@@ -233,9 +233,28 @@ color: var(--custom-very-dark);
   align-items: center;
 }
 
+.filter-by {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+#order, #sort_by {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
 .article-card-small, .article-card-small-stats {
   background-color: var(--custom-white);
+  margin: 0 2rem;
+  align-items: center;
 }
+
+.article-card-small-stats > p {
+  margin: 20px;
+}
+
+
 
 
 .article-card-small-stats {
@@ -323,9 +342,6 @@ em {
     background-color: red;
   }
 
-  .title-bar-site-wide {
-    width: 95%;
-  }
 
   .logo-tagline {
     display: none;
