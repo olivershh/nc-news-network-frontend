@@ -20,7 +20,8 @@ useEffect(() => {
 
     return <Loading isLoading={isLoading}>
         {comments.map(comment => {
-            return <CommentCard key={comment.comment_id} comment={comment}/>
+            const isUserComment=(comment.author === "grumpy19")
+            return <CommentCard key={comment.comment_id} comment={comment} setComments={setComments} isUserComment={isUserComment}/>
         })}
     </Loading>
 }

@@ -50,3 +50,9 @@ export function postCommentByID(article_id, comment) {
       return data;
     });
 }
+
+export function deleteCommentById(comment_id) {
+  return api.delete(`/comments/${comment_id}`).then(({ data }) => {
+    return data;
+  });
+}
