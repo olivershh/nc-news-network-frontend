@@ -21,7 +21,6 @@ export default function FilterBar({sortBy, setSortBy, order, setOrder}) {
             value={sortBy}
             onChange={(e) => handleSortByChange(e)}
           >
-            <option value=""></option>
             <option value="created_at">Date</option>
             <option value="votes">Hot</option>
             <option value="comment_count">Comments</option>
