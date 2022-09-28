@@ -10,10 +10,14 @@ export default function ArticleFull({ article_id }) {
   const [voteCounted, setVoteCounted] = useState(false);
 
   useEffect(() => {
-    getArticle(article_id).then(({ article }) => {
-      setArticle(article);
-      setIsLoading(false);
-    });
+    getArticle(article_id)
+      .then(({ article }) => {
+        setArticle(article);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log("caught the error!");
+      });
   }, []);
 
   return (
