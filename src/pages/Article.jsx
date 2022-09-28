@@ -9,7 +9,6 @@ export default function Article() {
     const [comments, setComments] = useState([])
     const {article_id} = useParams()
 
-    console.log(article_id)
 
     return (
         <div className="article-page">
