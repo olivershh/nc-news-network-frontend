@@ -37,6 +37,42 @@
   font-size: 2rem;;
 }
 
+.user {
+  padding: 10px;
+}
+
+.small-user-img {
+  width: 80px;
+}
+
+.comment-card {
+  display: flex;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.comment-opaque-bg {
+  border: 2px solid var(--custom-very-dark);
+  box-shadow: 4px 4px var(--custom-bold-secondary);
+  background-color: var(--custom-white);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.big-quotes {
+  font-size: 5rem;
+  padding:0 1rem;
+  margin: 0;
+  color: #d26759;
+}
+
+.comment-body {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 
 h1 {
   font-weight: 800;

@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom"
 import { getArticle, increaseVotes } from "./api-calls"
 import Loading from "./Loading"
 
-export default function ArticleCardBig(props) {
+export default function ArticleCardBig({article_id}) {
 
 const [isLoading, setIsLoading] = useState(true)
-const {article_id} = useParams()
+
 const [article, setArticle] = useState({})  
 const [voteCounted, setVoteCounted] = useState(false)
 

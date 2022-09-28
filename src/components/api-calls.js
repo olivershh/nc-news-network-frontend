@@ -33,3 +33,20 @@ export function increaseVotes(article_id) {
     })
     .then(({ data }) => {});
 }
+
+export function getCommentsByArticleID(article_id) {
+  return api.get(`/articles/${article_id}/comments`).then(({ data }) => {
+    return data;
+  });
+}
+
+export function postCommentByID(article_id, comment) {
+  const postObject = { username: "grumpy19", body: comment };
+  return api
+    .post(`/articles/${article_id}/comments`, postObject, {
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+    .then(({ data }) => {
+      return data;
+    });
+}
