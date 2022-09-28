@@ -5,6 +5,7 @@ import Loading from "../components/Loading"
 import TopicBar from "../components/TopicBar"
 import { useParams } from "react-router-dom"
 import ErrorBoxSmall from "../components/ErrorBoxSmall"
+import FilterBar from "../components/ArticleFilter"
 
 export default function ArticlesList() {
 
@@ -14,6 +15,10 @@ export default function ArticlesList() {
     let {topic} = useParams()
     const [isError, setIsError] = useState(false)
     const [errorOptions, setErrorOptions] = useState({})
+    const [sortBy, setSortBy] = useState(undefined)
+    const [order, setOrder] = useState("ASC")
+
+
 
 
     useEffect(() => {
@@ -21,7 +26,7 @@ export default function ArticlesList() {
         setIsError(false)
 
         
-        const searchParams = {params: {topic}}
+        const searchParams = {params: {topic, sort_by: sortBy, order }}
 
 
         getAllArticles(searchParams).then(({articles}) => {
@@ -43,7 +48,7 @@ export default function ArticlesList() {
         }
         })
     
-}, [topic])
+}, [topic, sortBy, order])
 
 if (isError)  {
     return <ErrorBoxSmall errorOptions={errorOptions} />
@@ -55,6 +60,7 @@ if (isError)  {
         
         <Loading isLoading={isLoading} largeIcon={true}>
         <TopicBar selectedTopic={topic}/>
+        <FilterBar setSortBy={setSortBy} sortBy={sortBy} order={order} setOrder={setOrder}/>
             <main className="articles-list-main">
         {articles.map(article => {
             return <ArticleCardSmall key={article.article_id} article={article}/>
