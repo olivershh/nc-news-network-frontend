@@ -32,6 +32,10 @@
   flex-direction: column;
 }
 
+.comment-card-owner {
+  background-color: #d26759;
+}
+
 .navbar-home-link {
   color: white;
   font-size: 2rem;;
