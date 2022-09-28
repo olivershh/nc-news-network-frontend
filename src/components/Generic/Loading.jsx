@@ -1,5 +1,5 @@
 export default function Loading({ isLoading, children, largeIcon = false }) {
-  const loadIcon = largeIcon ? "LOADING..." : "loading...";
+  const loadClassName = largeIcon ? "loading-icon-big" : "loading-icon-small";
 
-  return isLoading ? <div class={loadingIcon}></div> : children;
+  return isLoading ? <div class={loadClassName}></div> : children;
 }
