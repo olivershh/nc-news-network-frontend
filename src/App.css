@@ -8,6 +8,12 @@
 }
 
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 .homepage-big-link {
   border: 2px solid var(--custom-very-dark);
   box-shadow: 4px 4px var(--custom-bold-main);
