@@ -44,6 +44,7 @@ a, a:hover, a:focus, a:active {
 .home-menu {
   display: flex;
   flex-direction: column;
+  padding-top: 1rem;
 }
 
 
@@ -142,7 +143,11 @@ h1 {
   margin: 0;
   padding: 0;
   color: var(--custom-white);
-  font-family: 'Monofett', cursive;
+  font-family: 'Nabla', cursive;
+}
+
+h2 {
+  padding:0;
 }
 
 
@@ -170,11 +175,6 @@ body {
   
 }
 
-
-
-main {
-  padding-top: 1rem;
-}
 
 
 
@@ -221,7 +221,8 @@ color: var(--custom-very-dark);
   margin: 1rem auto;
   display: flex;
   align-items: center;
-  padding: 0 5%
+  padding: 0 5%;
+  justify-content: center;
 }
 
 .header-site-wide {

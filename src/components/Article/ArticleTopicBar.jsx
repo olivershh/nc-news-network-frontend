@@ -30,7 +30,10 @@ export default function ArticleTopicBar({ selectedTopic }) {
         to="/articles"
         className={selectedTopic ?? "topic-bar-selected-all"}
       >
-        ALL
+        all
+      </Link>
+      <Link key="home" to="/">
+        HOME
       </Link>
     </div>
   );
