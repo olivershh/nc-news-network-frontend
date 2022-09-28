@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { UserInfoContext } from "../contexts/UserInfoContext"
 import { postCommentByID } from "./api-calls"
 
 export default function PostComment({article_id, setComments}) {
 
     const [userComment, setUserComment] = useState("")
+    const {userInfo} = useContext(UserInfoContext)
 
     const handleChange = (event) =>  {
         setUserComment(event.target.value)
@@ -13,7 +15,7 @@ export default function PostComment({article_id, setComments}) {
         event.preventDefault()
         if (userComment === "") return
         setComments(prevComments => {
-            return [{author: "grumpy19", body: userComment, votes: 0, comment_id: Date.now()}, ...prevComments]
+            return [{author: userInfo.username, body: userComment, votes: 0, comment_id: Date.now()}, ...prevComments]
         })
         setUserComment("")
         postCommentByID(article_id, userComment)

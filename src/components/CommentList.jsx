@@ -9,7 +9,7 @@ export default function CommentsList({article_id, setComments, comments}) {
 
 
 const [isLoading, setIsLoading] = useState(true)
-const {userInfo, setUserInfo} = useContext(UserInfoContext)
+const {userInfo} = useContext(UserInfoContext)
 
 
 useEffect(() => {
