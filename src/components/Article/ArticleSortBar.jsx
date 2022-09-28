@@ -1,4 +1,4 @@
-export default function FilterBar({ sortBy, setSortBy, order, setOrder }) {
+export default function ArticleSortBar({ sortBy, setSortBy, order, setOrder }) {
   function handleSortByChange(event) {
     if (event.target.value) setSortBy(event.target.value);
     else setSortBy(undefined);

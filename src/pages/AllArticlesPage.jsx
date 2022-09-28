@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { getAllArticles, getTopics } from "../components/api-calls";
-import ArticleCardSmall from "../components/ArticleCardSmall";
-import Loading from "../components/Loading";
-import TopicBar from "../components/TopicBar";
+import { getAllArticles, getTopics } from "../components/Generic/api-calls";
+import Loading from "../components/Generic/Loading";
 import { useParams } from "react-router-dom";
-import ErrorBoxSmall from "../components/ErrorBoxSmall";
-import FilterBar from "../components/ArticleFilter";
+import ErrorBoxSmall from "../components/Generic/ErrorBoxSmall";
+import ArticlePreview from "../components/Article/ArticlePreview";
+import ArticleSortBar from "../components/Article/ArticleSortBar";
+import ArticleTopicBar from "../components/Article/ArticleTopicBar";
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
@@ -49,8 +49,8 @@ export default function ArticlesList() {
   return (
     <>
       <Loading isLoading={isLoading} largeIcon={true}>
-        <TopicBar selectedTopic={topic} />
-        <FilterBar
+        <ArticleTopicBar selectedTopic={topic} />
+        <ArticleSortBar
           setSortBy={setSortBy}
           sortBy={sortBy}
           order={order}
@@ -59,7 +59,7 @@ export default function ArticlesList() {
         <main className="articles-list-main">
           {articles.map((article) => {
             return (
-              <ArticleCardSmall key={article.article_id} article={article} />
+              <ArticlePreview key={article.article_id} article={article} />
             );
           })}
         </main>

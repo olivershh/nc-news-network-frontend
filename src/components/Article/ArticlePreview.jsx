@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ArticleCardSmall({ article }) {
+export default function ArticlePreview({ article }) {
   return (
     <div className="article-card-small">
       <Link

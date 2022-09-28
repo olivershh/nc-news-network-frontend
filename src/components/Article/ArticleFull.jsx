@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticle, increaseVotes } from "./api-calls";
-import Loading from "./Loading";
+import { getArticle, increaseVotes } from "../Generic/api-calls";
+import Loading from "../Generic/Loading";
 
-export default function ArticleCardBig({ article_id }) {
+export default function ArticleFull({ article_id }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const [article, setArticle] = useState({});
@@ -37,6 +37,7 @@ export default function ArticleCardBig({ article_id }) {
         <h2 className="article-card-big-header">
           {article.title} <em>by {article.author}</em>
         </h2>
+        <p className="article-card-big-body">{article.body}</p>
         <div className="article-card-big-stats">
           <button
             className={
@@ -46,13 +47,14 @@ export default function ArticleCardBig({ article_id }) {
             }
             onClick={handleVoteClick}
           >
-            <p>♡ {article.votes}</p>
+            {article.votes}
+            <br /> LIKES
           </button>
-          <button className="article-card-big-button">
-            <p>💬 {article.comment_count}</p>
-          </button>
+          <p>
+            {article.comment_count}
+            <br /> comments
+          </p>
         </div>
-        <p className="article-card-big-body">{article.body}</p>
       </div>
     </Loading>
   );

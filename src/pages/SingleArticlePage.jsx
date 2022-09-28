@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import ArticleCardBig from "../components/ArticleCardBig";
-import CommentsList from "../components/CommentList";
-import PostComment from "../components/PostComment";
+import ArticleFull from "../components/Article/ArticleFull";
+import CommentsList from "../components/Comment/CommentList";
+import CommentNew from "../components/Comment/CommentNew";
 
-export default function Article() {
+export default function SingleArticlePage() {
   const [comments, setComments] = useState([]);
   const { article_id } = useParams();
 
   return (
     <div className="article-page">
-      <ArticleCardBig article_id={article_id} />
-      <PostComment article_id={article_id} setComments={setComments} />
+      <ArticleFull article_id={article_id} />
+      <CommentNew article_id={article_id} setComments={setComments} />
       <CommentsList
         article_id={article_id}
         setComments={setComments}

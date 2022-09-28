@@ -1,10 +1,10 @@
 import "./App.css";
-import Header from "./site-wide/Header";
+import Header from "./components/site-wide/Header";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./site-wide/Footer";
-import ArticlesList from "./pages/ArticlesList";
-import Article from "./pages/Article";
-import Home from "./pages/Home";
+import Footer from "./components/site-wide/Footer";
+import AllArticlesPage from "./pages/AllArticlesPage";
+import SingleArticlePage from "./pages/SingleArticlePage";
+import HomePage from "./pages/HomePage";
 import { UserInfoContext } from "./contexts/UserInfoContext";
 import { useState } from "react";
 
@@ -21,10 +21,13 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<ArticlesList />} />
-          <Route path="/articles/:topic" element={<ArticlesList />} />
-          <Route path="/articles/article/:article_id" element={<Article />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/articles" element={<AllArticlesPage />} />
+          <Route path="/articles/:topic" element={<AllArticlesPage />} />
+          <Route
+            path="/articles/article/:article_id"
+            element={<SingleArticlePage />}
+          />
         </Routes>
         <Footer />
       </div>

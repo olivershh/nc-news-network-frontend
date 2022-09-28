@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getTopics } from "./api-calls";
+import { getTopics } from "../Generic/api-calls";
 
-export default function TopicBar({ selectedTopic }) {
+export default function ArticleTopicBar({ selectedTopic }) {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
