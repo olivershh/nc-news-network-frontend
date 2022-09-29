@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { getAllArticles, getTopics } from "../components/Generic/api-calls";
+import { getAllArticles } from "../components/Generic/api-calls";
 import Loading from "../components/Generic/Loading";
 import { useParams } from "react-router-dom";
-import ErrorBoxSmall from "../components/Generic/ErrorBoxSmall";
 import ArticlePreview from "../components/Article/ArticlePreview";
 import ArticleSortBar from "../components/Article/ArticleSortBar";
 import ArticleTopicBar from "../components/Article/ArticleTopicBar";
+import ErrorBox from "../components/Generic/ErrorBox";
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
@@ -33,17 +33,14 @@ export default function ArticlesList() {
         if (responseMessage === "topic not found") {
           setErrorOptions({
             msg: `Sorry, we don't have any articles about ${topic}`,
-            linkText: "Head back to all articles",
-            linkRoute: "/articles",
           });
-
-          setIsError(true);
         }
+        setIsError(true);
       });
   }, [topic, sortBy, order]);
 
   if (isError) {
-    return <ErrorBoxSmall errorOptions={errorOptions} />;
+    return <ErrorBox errorOptions={errorOptions} />;
   }
 
   return (
