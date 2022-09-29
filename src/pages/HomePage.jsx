@@ -1,8 +1,19 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import TypeWriter from "../components/Generic/Typewriter";
+
+import { UserInfoContext } from "../contexts/UserInfoContext";
 
 export default function Home() {
+  const { userInfo } = useContext(UserInfoContext);
+
   return (
     <main className="home-menu">
+      <TypeWriter
+        string={`${"‎".repeat(20)}Welcome, ${userInfo.username}.`}
+        speed="50"
+        tag="h2"
+      />
       <Link className="homepage-big-link" to="/articles">
         ALL
       </Link>

@@ -1,11 +1,12 @@
-:root {
+/* :root {
   --custom-bold-main: rgb(42, 106, 159);
   --custom-background: #E8F9FD;
   --custom-white: #f3f7f8;
   --custom-bold-secondary: #59CE8F;
   --custom-very-dark:  rgb(57, 51, 51);
   --customer-bold-tertiary: #d26759;
-}
+} */
+
 
 
 a, a:hover, a:focus, a:active {
@@ -237,6 +238,11 @@ color: var(--custom-very-dark);
 .filter-by {
   margin: 1rem;
   font-size: 1.5rem;
+  display: flex;
+}
+
+.article-filter-settings {
+  display:flex;
 }
 
 #order, #sort_by {
@@ -350,4 +356,9 @@ em {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+body { 
+  border:2px solid red;
 }

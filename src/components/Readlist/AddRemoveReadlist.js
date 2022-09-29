@@ -1,0 +1,35 @@
+import { useContext } from "react";
+import { ReadListContext } from "../../contexts/ReadListContext";
+
+export default function AddRemoveReadList({ article }) {
+  const { readList, setReadList } = useContext(ReadListContext);
+
+  function inToRead() {
+    return readList.toRead.some((readListArticle) => {
+      return readListArticle.article_id === article.article_id;
+    });
+  }
+
+  function handleClick() {
+    setReadList((prevReadList) => {
+      let newHaveRead = [...prevReadList["haveRead"]];
+      let newToRead = [...prevReadList["toRead"]];
+
+      if (inToRead()) {
+        newToRead = newToRead.filter((prevArticle) => {
+          return prevArticle.article_id !== article.article_id;
+        });
+      } else {
+        newToRead = [article, ...newToRead];
+      }
+
+      return { toRead: newToRead, haveRead: newHaveRead };
+    });
+  }
+
+  return (
+    <button onClick={handleClick}>
+      {inToRead() ? "remove" : "add to read"}
+    </button>
+  );
+}

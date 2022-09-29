@@ -3,9 +3,8 @@ import { getAllArticles } from "../components/Generic/api-calls";
 import Loading from "../components/Generic/Loading";
 import { useParams } from "react-router-dom";
 import ArticlePreview from "../components/Article/ArticlePreview";
-import ArticleSortBar from "../components/Article/ArticleSortBar";
-import ArticleTopicBar from "../components/Article/ArticleTopicBar";
 import ErrorBox from "../components/Generic/ErrorBox";
+import ArticleFilterSettings from "../components/Article/ArticleFilterSettings";
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
@@ -46,8 +45,8 @@ export default function ArticlesList() {
   return (
     <>
       <Loading isLoading={isLoading} largeIcon={true}>
-        <ArticleTopicBar selectedTopic={topic} />
-        <ArticleSortBar
+        <ArticleFilterSettings
+          selectedTopic={topic}
           setSortBy={setSortBy}
           sortBy={sortBy}
           order={order}

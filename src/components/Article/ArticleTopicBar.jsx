@@ -1,27 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { getTopics } from "../Generic/api-calls";
 
 export default function ArticleTopicBar({ selectedTopic }) {
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    getTopics().then(({ topics }) => {
-      setTopics(topics);
-    });
-  }, []);
+  const [topics, setTopics] = useState(["cooking", "coding", "football"]);
 
   return (
     <div className="topic-bar">
       {topics.map((topic) => {
-        const isSelectedTopic = selectedTopic === topic.slug;
+        const isSelectedTopic = selectedTopic === topic;
         return (
           <Link
-            key={topic.slug}
-            to={`/articles/${topic.slug}`}
+            key={topic}
+            to={`/articles/${topic}`}
             className={isSelectedTopic ? "topic-bar-selected" : undefined}
           >
-            {topic.slug}
+            {topic}
           </Link>
         );
       })}
@@ -32,12 +25,6 @@ export default function ArticleTopicBar({ selectedTopic }) {
         className={selectedTopic ?? "topic-bar-selected-all"}
       >
         all
-      </Link>
-      <Link key="home" to="/">
-        HOME
-      </Link>
-      <Link key="readlist" to="/readlist">
-        readlist
       </Link>
     </div>
   );
