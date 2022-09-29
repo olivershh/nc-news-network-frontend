@@ -200,7 +200,7 @@ body {
 
 
 
-.error-msg-small {
+.error-box {
   border: 2px solid var(--custom-very-dark);
   margin: 0 auto;
   margin-top: 4rem;
@@ -210,7 +210,7 @@ body {
   box-shadow: 4px 4px var(--custom-bold-main);
   
 }
-.error-msg-small > a {
+.error-box > a {
 color: var(--custom-very-dark);
 
 }

@@ -7,6 +7,7 @@ import SingleArticlePage from "./pages/SingleArticlePage";
 import HomePage from "./pages/HomePage";
 import { UserInfoContext } from "./contexts/UserInfoContext";
 import { useState } from "react";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -28,6 +29,7 @@ function App() {
             path="/articles/article/:article_id"
             element={<SingleArticlePage />}
           />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </div>

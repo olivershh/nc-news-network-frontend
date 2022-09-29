@@ -1,19 +1,35 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { getArticle, increaseVotes } from "../Generic/api-calls";
+import ErrorBox from "../Generic/ErrorBox";
 import Loading from "../Generic/Loading";
 import handleVoteClick from "./handleVote";
 
-export default function ArticleFull({ article_id }) {
+export default function ArticleFull({
+  article_id,
+  setIsArticleError,
+  setErrorOptions,
+}) {
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState({});
   const [voteCounted, setVoteCounted] = useState(false);
 
   useEffect(() => {
-    getArticle(article_id).then(({ article }) => {
-      setArticle(article);
-      setIsLoading(false);
-    });
+    setIsArticleError(false);
+    getArticle(article_id)
+      .then(({ article }) => {
+        setArticle(article);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        const responseMessage = err.response?.data?.msg;
+
+        if (responseMessage === "article not found") {
+          setErrorOptions({
+            msg: "Sorry, we couldn't find that article",
+          });
+        }
+        setIsArticleError(true);
+      });
   }, []);
 
   return (
