@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ReadListContext } from "../../contexts/ReadListContext";
 import { getArticle, increaseVotes } from "../Generic/api-calls";
 import Loading from "../Generic/Loading";
 import ArticleTopicBar from "./ArticleTopicBar";
@@ -12,6 +13,8 @@ export default function ArticleFull({
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState({});
   const [voteCounted, setVoteCounted] = useState(false);
+  const { setReadList } = useContext(ReadListContext);
+  const [articleLoaded, setArticleLoaded] = useState(false);
 
   useEffect(() => {
     setIsArticleError(false);
@@ -19,6 +22,7 @@ export default function ArticleFull({
       .then(({ article }) => {
         setArticle(article);
         setIsLoading(false);
+        setArticleLoaded(true);
       })
       .catch((err) => {
         const responseMessage = err.response?.data?.msg;
@@ -31,6 +35,24 @@ export default function ArticleFull({
         setIsArticleError(true);
       });
   }, []);
+
+  useEffect(() => {
+    if (articleLoaded) {
+      setReadList((prevReadList) => {
+        let newHaveRead = [...prevReadList["haveRead"]];
+        let newToRead = [...prevReadList["toRead"]];
+
+        newToRead = newToRead.filter((prevArticle) => {
+          console.log(prevArticle);
+          return prevArticle.article_id !== parseInt(article_id);
+        });
+
+        newHaveRead = [...newHaveRead, article];
+
+        return { toRead: newToRead, haveRead: newHaveRead };
+      });
+    }
+  }, [articleLoaded]);
 
   return (
     <Loading isLoading={isLoading} largeIcon={true}>

@@ -13,32 +13,32 @@ export default function ArticleTopicBar({ selectedTopic }) {
 
   return (
     <div className="topic-bar">
-      <div className="nav-topics">
-        {topics.map((topic) => {
-          const isSelectedTopic = selectedTopic === topic.slug;
-          return (
-            <Link
-              key={topic.slug}
-              to={`/articles/${topic.slug}`}
-              className={isSelectedTopic ? "topic-bar-selected" : undefined}
-            >
-              {topic.slug}
-            </Link>
-          );
-        })}
-      </div>
-      <div className="nav-other">
-        <Link
-          key="all"
-          to="/articles"
-          className={selectedTopic ?? "topic-bar-selected-all"}
-        >
-          all
-        </Link>
-        <Link key="home" to="/">
-          HOME
-        </Link>
-      </div>
+      {topics.map((topic) => {
+        const isSelectedTopic = selectedTopic === topic.slug;
+        return (
+          <Link
+            key={topic.slug}
+            to={`/articles/${topic.slug}`}
+            className={isSelectedTopic ? "topic-bar-selected" : undefined}
+          >
+            {topic.slug}
+          </Link>
+        );
+      })}
+
+      <Link
+        key="all"
+        to="/articles"
+        className={selectedTopic ?? "topic-bar-selected-all"}
+      >
+        all
+      </Link>
+      <Link key="home" to="/">
+        HOME
+      </Link>
+      <Link key="readlist" to="/readlist">
+        readlist
+      </Link>
     </div>
   );
 }
