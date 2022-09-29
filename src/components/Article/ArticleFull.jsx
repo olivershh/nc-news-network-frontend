@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { ReadListContext } from "../../contexts/ReadListContext";
 import { getArticle, increaseVotes } from "../Generic/api-calls";
 import Loading from "../Generic/Loading";
-import ArticleTopicBar from "./ArticleTopicBar";
 import handleVoteClick from "./handleVote";
 
 export default function ArticleFull({
@@ -43,7 +42,6 @@ export default function ArticleFull({
         let newToRead = [...prevReadList["toRead"]];
 
         newToRead = newToRead.filter((prevArticle) => {
-          console.log(prevArticle);
           return prevArticle.article_id !== parseInt(article_id);
         });
 
