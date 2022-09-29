@@ -14,13 +14,17 @@ export default function ArticleFull({
   const [voteCounted, setVoteCounted] = useState(false);
 
   useEffect(() => {
+<<<<<<< HEAD
     setIsArticleError(false);
+=======
+>>>>>>> 1c8d3af9ab31c5dd1d353eafd73bf83ecd852596
     getArticle(article_id)
       .then(({ article }) => {
         setArticle(article);
         setIsLoading(false);
       })
       .catch((err) => {
+<<<<<<< HEAD
         const responseMessage = err.response?.data?.msg;
 
         if (responseMessage === "article not found") {
@@ -29,6 +33,9 @@ export default function ArticleFull({
           });
         }
         setIsArticleError(true);
+=======
+        console.log("caught the error!");
+>>>>>>> 1c8d3af9ab31c5dd1d353eafd73bf83ecd852596
       });
   }, []);
 
