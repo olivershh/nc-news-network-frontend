@@ -28,8 +28,32 @@ export default function AddRemoveReadList({ article }) {
   }
 
   return (
-    <button onClick={handleClick}>
-      {inToRead() ? "remove" : "add to read"}
+    <button
+      className={
+        inToRead()
+          ? "article-preview-icon-faved icon-big"
+          : "article-preview-icon icon-big test-case"
+      }
+      onClick={handleClick}
+    >
+      {<i className="fa-solid fa-bookmark"></i>}
     </button>
   );
+}
+
+{
+  /* <button
+  className={voteCounted ? "vote-button-red" : "vote-button"}
+  onClick={() =>
+    handleVoteClick(
+      voteCounted,
+      setArticle,
+      setVoteCounted,
+      article_id,
+      increaseVotes
+    )
+  }
+>
+  <i class="fa-solid fa-heart"></i>
+</button>; */
 }

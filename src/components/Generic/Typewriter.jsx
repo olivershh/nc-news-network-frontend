@@ -28,5 +28,5 @@ export default function TypeWriter({ string, speed }) {
 
   //   typewrite();
 
-  return <p>{currentString}</p>;
+  return <p className="typewriter">{currentString}</p>;
 }

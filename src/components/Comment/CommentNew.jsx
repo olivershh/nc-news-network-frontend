@@ -34,6 +34,7 @@ export default function CommentNew({ article_id, setComments }) {
     <div className="new-comment">
       <div className="comment-form">
         <form onSubmit={handleSubmit}>
+          {/* <div className="textAreaWrapped"> */}
           <textarea
             placeholder="Leave a comment.."
             name="userComment"
@@ -42,8 +43,11 @@ export default function CommentNew({ article_id, setComments }) {
           >
             Say something...
           </textarea>
+          {/* </div> */}
           <br />
-          <button type="submit">Post!</button>
+          <button className="submit-post" type="submit">
+            Post!
+          </button>
         </form>
       </div>
     </div>

@@ -13,5 +13,9 @@ export default function CommentDelete({ comment, setComments }) {
     });
   }
 
-  return <button onClick={handleDelete}>🗑️</button>;
+  return (
+    <button className="vote-button-user" onClick={handleDelete}>
+      <i class="fa-solid fa-trash"></i>
+    </button>
+  );
 }

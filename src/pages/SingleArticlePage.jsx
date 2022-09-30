@@ -13,8 +13,8 @@ export default function SingleArticlePage() {
   const [errorOptions, setErrorOptions] = useState({});
 
   return (
-    <div className="article-page">
-      <ArticleTopicBar />
+    <main className="article-page">
+      {/* <ArticleTopicBar /> */}
       {isArticleError ? (
         <ErrorBox errorOptions={errorOptions} />
       ) : (
@@ -32,7 +32,7 @@ export default function SingleArticlePage() {
           />
         </>
       )}
-    </div>
+    </main>
   );
 }
 

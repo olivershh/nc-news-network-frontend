@@ -25,6 +25,7 @@ export default function ArticlesList() {
       .then(({ articles }) => {
         setArticles(articles);
         setIsLoading(false);
+        console.log(topic, "useeffect on topic change");
       })
       .catch((err) => {
         const responseMessage = err.response?.data?.msg;
@@ -45,19 +46,21 @@ export default function ArticlesList() {
   return (
     <>
       <Loading isLoading={isLoading} largeIcon={true}>
-        <ArticleFilterSettings
-          selectedTopic={topic}
-          setSortBy={setSortBy}
-          sortBy={sortBy}
-          order={order}
-          setOrder={setOrder}
-        />
-        <main className="articles-list-main">
-          {articles.map((article) => {
-            return (
-              <ArticlePreview key={article.article_id} article={article} />
-            );
-          })}
+        <main className="article-list-page">
+          <ArticleFilterSettings
+            selectedTopic={topic}
+            setSortBy={setSortBy}
+            sortBy={sortBy}
+            order={order}
+            setOrder={setOrder}
+          />
+          <section className="articles-list-main">
+            {articles.map((article) => {
+              return (
+                <ArticlePreview key={article.article_id} article={article} />
+              );
+            })}
+          </section>
         </main>
       </Loading>
     </>

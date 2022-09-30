@@ -24,18 +24,26 @@ export default function ReadListPage() {
   );
 
   return (
-    <div className="read-list-page">
+    <main className="read-list-page">
+      <section className="readlist-intro">
+        <h2>My read list</h2>
+        <p>
+          Hit the bookmark button on articles to add or remove from your
+          readlist. Viewed articles will be removed automatically.
+        </p>
+      </section>
       <div className="read-list-all">
         <div className="read-list-read">
           <h2>Ready to read</h2>
           {toRead}
         </div>
+
         <div className="read-list-read">
           <h2>Read history</h2>
 
           {haveRead}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
