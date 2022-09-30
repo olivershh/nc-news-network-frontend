@@ -9,9 +9,7 @@ export default function ArticleFilterSettings({
   order,
   setOrder,
 }) {
-  useEffect(() => {
-    console.log(selectedTopic, "useeffect on topic change in artfiltsettings");
-  });
+  useEffect(() => {});
   return (
     <div className="article-filter-settings">
       <ArticleTopicBar selectedTopic={selectedTopic} />

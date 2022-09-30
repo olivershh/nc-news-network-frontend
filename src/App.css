@@ -34,7 +34,7 @@ header, main, footer {
 
 header {
     height: 80px;
-    background-color: rgb(27, 185, 190);
+    background-color: rgb(33, 180, 185);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -209,19 +209,21 @@ footer {
     background: none;
     border: none;
     margin: 0 .2rem;
-    color: rgb(45, 40, 40);
+    color: rgb(148, 137, 137);
+    
 
-}
-
-.article-preview-icon-faved {
-    color: rgb(27, 185, 190);
 }
 
 .icon-big {
 
         border-left: 2px solid rgb(58, 56, 56);
         height: inherit;
+        color: rgb(63, 59, 59);
 
+}
+
+.article-preview-icon-faved {
+    color: rgb(245, 176, 15);
 }
 
 
@@ -404,12 +406,43 @@ textarea {
     background-color: rgb(255,255,255,.3);
     padding: 1rem;
     margin-bottom: 1.5rem;
+    margin-top: .5rem;
 }
 
 .read-list-read {
     margin-bottom: 1.5rem;
 }
 
+
+
+.error-box {
+    
+    background-color: rgb(255, 255, 255, .9);
+    border: 2px solid black;
+    align-items: center;
+    text-align: center;
+    box-shadow: 6px 6px black;
+    width: auto;
+    opacity: .9;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.error-box > a {
+    color: rgb(210, 35, 35);
+}
+
+.error-box-button {
+    box-shadow: 4px 4px black;
+    border: 2px solid black;
+    padding: .5rem;
+    margin-top: 1rem;
+    background-color: #e4d9e0;
+}
 
 
 
@@ -472,5 +505,23 @@ header {
     width: 3rem;
 }
 
+
+.home-page {
+    max-width: 600px;
+
+
+
+}
+
+
+
+.error-box {
+    
+    max-width: 450px;
+}
+
+.readlist-intro {
+margin-top: 1rem;
+}
 
 }
