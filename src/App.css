@@ -21,6 +21,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
 
+h2 {
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(75, 72, 72);
+}
+
 
 header, main, footer {
     padding: 1rem;
@@ -39,6 +45,53 @@ header {
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+
+footer {
+    height: 40px;
+    background-color: rgb(255,255,255,.3);
+    padding: 0 1.5rem;
+    color: rgb(50, 47, 47);
+    position: bottom;
+}
+
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-options {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+}
+
+.homepage-big-link {
+    width: auto;
+    border: 2px solid rgb(16, 15, 15);
+    padding: .5rem 1rem;
+    background-color: rgb(255,255,255,.6);
+    height: auto;
+    color: rgb(26, 25, 25);
+    text-align: center;
+    box-shadow: 3px 3px black;
+}
+
+.readlist-intro-p, .typewriter {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.my-readlist-link {
+    grid-column: span 2;
+    background-color: rgb(204, 90, 147);
+    color: white
+
 }
 
 
@@ -70,6 +123,7 @@ header {
     margin-bottom: 1.5rem;
     box-shadow: 6px 6px black;
     opacity: .9;
+    padding-top: 1rem;
     
     
 }
@@ -199,7 +253,7 @@ header {
     margin: .5rem auto;
 }
 
-.topic-bar-option, .topic-bar-selected, .topic-bar-selected-right, .topic-bar-option-right {
+.topic-bar-option, .topic-bar-selected, .topic-bar-selected-right, .topic-bar-option-right{
     border: 2px solid black;
     background-color:grey;
     margin-right: .5rem;
@@ -208,15 +262,35 @@ header {
 }
 
 .topic-bar-selected {
-    background-color: blue;
+    background-color: rgb(231, 221, 229);
+    box-shadow: 2px 2px black;
+    color: rgb(56, 53, 53);
 }
 
 .topic-bar-option-right, .topic-bar-selected-right {
     margin-right: 0;
 }
 
+.filter-by {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    background-color: rgb(231, 221, 229);
+    box-shadow: 2px 2px black;
+    color: rgb(56, 53, 53);
+    border: 2px solid black;
+    margin: 1rem 0 .3rem 0;
+    padding: .2rem;
+    
+}
 
+    
+    select {
 
+    margin: 0 1rem 0 .2rem;
+    
+}
 
 
 
@@ -304,9 +378,37 @@ textarea {
 }
 
 
+.article-list-page {
+    padding-top: 1rem;
+}
+
+.line {
+    width: 50%;
+    border: 1px solid rgb(36, 35, 35);
+    margin: 0 10px;
+}
 
 
+.readlist-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
+
+.readlist-intro {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: rgb(255,255,255,.3);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.read-list-read {
+    margin-bottom: 1.5rem;
+}
 
 
 
@@ -317,65 +419,58 @@ textarea {
 
 @media screen and (min-width: 700px) {
 
-    header, main, footer {
-        padding: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    body {
-        font-size: 18px;
-        background-image: none;
-        background-color:rgb(215, 207, 207);
-
-    }
-
-    h1 {
-        font-size: 4rem;;
-    }
-
-    main {
-        box-shadow: 0 0 80px 1px rgba(37, 35, 37, 0.6)
-    }
-
-
-    .article-card-header {
-        padding: 1.5rem;
-        display: block;
-        text-align: center;
-
-    }
-
-    .article-card-big-body {
-        border-top: 2px solid rgb(197, 190, 190);
-        border-bottom: 2px solid rgb(197, 190, 190);
-        padding-top: 25px;
-        padding-bottom: 25px;
-        margin-top: 0;
-    }
-
-
-    .votes {
-        padding: 0 20px;
-    }
-
-    .comment-bubble, .comment-bubble-owner {
-
-        padding: 0rem 1rem;
-        font-size: .9rem;
-        width: 100%;
-
-    }
-
-    .user, .owner {
-        width: 5%;
-        padding: .5rem 0 .5rem;
-    }
-
     textarea {
         height: 100px;
     }
 
+    .article-filter-settings {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: .4rem -0;
+    
+    
+    }
+
+
+.article-filter-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .4rem -0;
+
+
+}
+
+.filter-bar {
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.filter-by {
+    width: 50%;
+    margin: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.comment-bubble {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.owner, .user {
+    width: 3rem;
+}
 
 
 }

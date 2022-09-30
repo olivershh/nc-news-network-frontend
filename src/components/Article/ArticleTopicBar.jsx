@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ArticleTopicBar({ selectedTopic }) {
-  const [topics, setTopics] = useState(["cooking", "coding", "football"]);
+  const [topics] = useState(["cooking", "coding", "football"]);
 
   return (
     <section role="search" className="filter-bar">
@@ -27,8 +27,8 @@ export default function ArticleTopicBar({ selectedTopic }) {
           key="all"
           to="/articles"
           className={
-            selectedTopic
-              ? "topic-bar-selected-right"
+            !selectedTopic
+              ? "topic-bar-selected-right topic-bar-selected"
               : "topic-bar-option-right"
           }
         >
