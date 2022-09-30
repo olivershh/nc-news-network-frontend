@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ArticleTopicBar({ selectedTopic }) {
@@ -6,26 +6,35 @@ export default function ArticleTopicBar({ selectedTopic }) {
 
   return (
     <section role="search" className="filter-bar">
-      {topics.map((topic) => {
-        const isSelectedTopic = selectedTopic === topic;
-        return (
-          <Link
-            key={topic}
-            to={`/articles/${topic}`}
-            className={isSelectedTopic ? "topic-bar-selected" : undefined}
-          >
-            {topic}
-          </Link>
-        );
-      })}
-
-      <Link
-        key="all"
-        to="/articles"
-        className={selectedTopic ?? "topic-bar-selected-all"}
-      >
-        all
-      </Link>
+      <div className="filter-topics">
+        {topics.map((topic) => {
+          const isSelectedTopic = selectedTopic === topic;
+          return (
+            <Link
+              key={topic}
+              to={`/articles/${topic}`}
+              className={
+                isSelectedTopic ? "topic-bar-selected" : "topic-bar-option"
+              }
+            >
+              {topic}
+            </Link>
+          );
+        })}
+      </div>
+      <div className="filter-all">
+        <Link
+          key="all"
+          to="/articles"
+          className={
+            selectedTopic
+              ? "topic-bar-selected-right"
+              : "topic-bar-option-right"
+          }
+        >
+          all
+        </Link>
+      </div>
     </section>
   );
 }
