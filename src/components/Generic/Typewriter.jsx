@@ -14,18 +14,5 @@ export default function TypeWriter({ string, speed }) {
     }
   }, [currentString]);
 
-  //   typewriter(string);
-
-  //   function typewrite() {
-  //     if (!stringArray) return;
-  //     setCurrentString((prev) => `${stringArray[0]}${prev}`);
-  //     stringArray.shift();
-  //     setTimeout(() => {
-  //       typewrite();
-  //     }, 1000);
-  //   }
-
-  //   typewrite();
-
   return <p className="typewriter">{currentString}</p>;
 }
