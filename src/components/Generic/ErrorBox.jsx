@@ -8,7 +8,10 @@ export default function ErrorBox({ errorOptions }) {
   return (
     <div className="error-box">
       <h3>{errorOptions?.msg ?? defaultMsg}</h3>
-      <Link to={errorOptions?.linkRoute ?? defaultLinkRoute}>
+      <Link
+        className="error-box-button"
+        to={errorOptions?.linkRoute ?? defaultLinkRoute}
+      >
         {errorOptions?.linkText ?? defaultLinkText}
       </Link>
       <div className="additional-error-option">

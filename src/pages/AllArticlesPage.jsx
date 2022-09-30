@@ -25,7 +25,6 @@ export default function ArticlesList() {
       .then(({ articles }) => {
         setArticles(articles);
         setIsLoading(false);
-        console.log(topic, "useeffect on topic change");
       })
       .catch((err) => {
         const responseMessage = err.response?.data?.msg;

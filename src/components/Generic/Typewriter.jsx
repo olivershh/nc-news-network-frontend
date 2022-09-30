@@ -5,7 +5,6 @@ export default function TypeWriter({ string, speed }) {
   const stringArray = string.split("");
 
   useEffect(() => {
-    console.log("rendering");
     if (currentString.length < string.length) {
       setTimeout(() => {
         setCurrentString((prev) => {
