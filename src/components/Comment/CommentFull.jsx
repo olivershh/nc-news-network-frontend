@@ -18,10 +18,10 @@ export default function CommentFull({ comment, isUserComment, setComments }) {
 
   return (
     <div className={isUserComment ? "comment-card-user" : `comment-card`}>
-      {userProfile}
       <div
         className={`comment-bubble ${isUserComment && "comment-bubble-owner"}`}
       >
+        {userProfile}
         <div className="comment-body">
           <p>{comment.body}</p>
         </div>
