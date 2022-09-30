@@ -19,7 +19,9 @@ export default function CommentFull({ comment, isUserComment, setComments }) {
   return (
     <div className={isUserComment ? "comment-card-user" : `comment-card`}>
       <div
-        className={`comment-bubble ${isUserComment && "comment-bubble-owner"}`}
+        className={`comment-bubble ${
+          isUserComment && "comment-bubble comment-bubble-owner"
+        }`}
       >
         {userProfile}
         <div className="comment-body">
@@ -30,3 +32,7 @@ export default function CommentFull({ comment, isUserComment, setComments }) {
     </div>
   );
 }
+
+// {isUserComment && (
+//   <CommentDelete comment={comment} setComments={setComments} />
+// )}
