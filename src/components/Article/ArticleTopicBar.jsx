@@ -5,7 +5,7 @@ export default function ArticleTopicBar({ selectedTopic }) {
   const [topics, setTopics] = useState(["cooking", "coding", "football"]);
 
   return (
-    <div className="topic-bar">
+    <section role="search" className="filter-bar">
       {topics.map((topic) => {
         const isSelectedTopic = selectedTopic === topic;
         return (
@@ -26,6 +26,6 @@ export default function ArticleTopicBar({ selectedTopic }) {
       >
         all
       </Link>
-    </div>
+    </section>
   );
 }

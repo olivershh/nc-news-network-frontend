@@ -8,7 +8,7 @@ export default function Home() {
   const { userInfo } = useContext(UserInfoContext);
 
   return (
-    <main className="home-menu">
+    <main className="home-page">
       <TypeWriter
         string={`${"‎".repeat(20)}Welcome, ${userInfo.username}.`}
         speed="50"

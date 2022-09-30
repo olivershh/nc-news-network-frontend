@@ -7,5 +7,9 @@ export default function PageNotFound() {
     linkRoute: "/",
   };
 
-  return <ErrorBox errorOptions={errorOptions} />;
+  return (
+    <main className="404-page">
+      <ErrorBox errorOptions={errorOptions} />;
+    </main>
+  );
 }

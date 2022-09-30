@@ -54,37 +54,47 @@ export default function ArticleFull({
 
   return (
     <Loading isLoading={isLoading} largeIcon={true}>
-      <div className="article-card-big">
-        <h2 className="article-card-big-header">
-          {article.title} <em>by {article.author}</em>
-        </h2>
+      <article className="article-card-big">
+        <div className="article-card-header">
+          <h2>{article.title}</h2>
+          <h3>
+            <em>by {article.author}</em>
+          </h3>
+        </div>
         <p className="article-card-big-body">{article.body}</p>
         <div className="article-card-big-stats">
-          <button
-            className={
-              voteCounted
-                ? "article-card-big-button-voted"
-                : "article-card-big-button"
-            }
-            onClick={() =>
-              handleVoteClick(
-                voteCounted,
-                setArticle,
-                setVoteCounted,
-                article_id,
-                increaseVotes
-              )
-            }
-          >
-            {article.votes}
-            <br /> LIKES
-          </button>
-          <p>
-            {article.comment_count}
-            <br /> comments
-          </p>
+          <div className="votes">
+            <button
+              className={voteCounted ? "vote-button-red" : "vote-button"}
+              onClick={() =>
+                handleVoteClick(
+                  voteCounted,
+                  setArticle,
+                  setVoteCounted,
+                  article_id,
+                  increaseVotes
+                )
+              }
+            >
+              <i class="fa-solid fa-heart"></i>
+            </button>
+            <p>{article.votes}</p>
+          </div>
+          <div className="votes">
+            <button className="comment-button">
+              <i class="fa-solid fa-comment"></i>
+            </button>
+            <p>{article.comment_count}</p>
+          </div>
+
+          {/* <div className="comments">
+            <p>
+              {article.comment_count}
+              <br /> comments
+            </p>
+          </div> */}
         </div>
-      </div>
+      </article>
     </Loading>
   );
 }

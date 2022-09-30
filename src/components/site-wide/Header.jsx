@@ -3,9 +3,9 @@ import Titlebar from "./Titlebar";
 
 export default function Header() {
   return (
-    <div className="header-site-wide">
+    <header className="header-site-wide">
       <Titlebar />
       <Navbar />
-    </div>
+    </header>
   );
 }

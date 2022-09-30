@@ -24,7 +24,7 @@ export default function ReadListPage() {
   );
 
   return (
-    <div className="read-list-page">
+    <main className="read-list-page">
       <div className="read-list-all">
         <div className="read-list-read">
           <h2>Ready to read</h2>
@@ -36,6 +36,6 @@ export default function ReadListPage() {
           {haveRead}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

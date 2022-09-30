@@ -7,7 +7,12 @@ export default function CommentFull({ comment, isUserComment, setComments }) {
         className={`small-user-img ${isUserComment && "small-user-img-owner"}`}
         src="https://visualpharm.com/assets/30/User-595b40b85ba036ed117da56f.svg"
       />
-      <p>{comment.author}</p>
+      <div className="user-stats">
+        <button className="vote-button-user">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+        <p>{comment.votes}</p>
+      </div>
     </div>
   );
 
@@ -15,19 +20,12 @@ export default function CommentFull({ comment, isUserComment, setComments }) {
     <div className={isUserComment ? "comment-card-user" : `comment-card`}>
       {userProfile}
       <div
-        className={`comment-opaque-bg ${
-          isUserComment && "comment-opaque-bg-owner"
-        }`}
+        className={`comment-bubble ${isUserComment && "comment-bubble-owner"}`}
       >
         <div className="comment-body">
           <p>{comment.body}</p>
         </div>
-        <div className="comment-votes">
-          <h2>♡ {comment.votes}</h2>
-          {isUserComment && (
-            <CommentDelete comment={comment} setComments={setComments} />
-          )}
-        </div>
+        <div className="username-signature">{comment.author}</div>
       </div>
     </div>
   );
